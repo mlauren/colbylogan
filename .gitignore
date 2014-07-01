@@ -7,7 +7,8 @@ wp-config.php
 wp/
 .idea/
 app/themes/*
-!app/themes/reverie
-app/mu-plugins/*
+!app/themes/reverie-plus
+app/themes/reverie-plus/.sass-cache/
+app/mu-plugins
 !app/mu-plugins/custom-content.php
-app/plugins/*
+app/plugins

@@ -1,0 +1,106 @@
+
+/* Sets up Typography in ems so that flowtype can use it. */
+body {
+  font-size: 18px;
+}
+h1,h2,h3,h4,h5,h6,p {
+  line-height: 1.45;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1em; }
+h4 { font-size: .85em; }
+h5 { font-size: .6em; }
+h6 { font-size: .4em; }
+
+/* Foundation overrides */
+body > header.contain-to-grid.sticky {
+  margin-bottom: 0;
+}
+
+/* Custom Slick Slide Styles */
+.slide-container {
+  background: $body-font-color;
+  .slick-slide {
+    .title-slide-wrapper {
+      z-index: 1;
+      position: relative;
+      width: 44%;
+
+      &.left {
+        .slideshow-text-header {
+          margin: 10% 1% 1% 20%;
+        }
+        .slideshow-text-credit {
+          margin: 10% 1% 1% 20%;
+        }
+      }
+      &.right {
+        .slideshow-text-header {
+          margin: 10% 7% 1% -7%;
+        }
+        .slideshow-text-credit {
+          margin: 10% 7% 1% -7%;
+        }
+      }
+      .slideshow-text-header, .slideshow-text-credit {
+        color: white;
+        width: 100%;
+        text-shadow: 1px -1px 2px rgba(43,43,43,1);
+      }
+      .slideshow-text-header {
+        font-weight: 700;
+      }
+      .slideshow-text-credit {
+        font-weight: 500;
+      }
+    }
+    img {
+      top: 0px;
+      position: absolute;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    border-radius: 0 6px 6px;
+    background: rgba(0,0,0,.3) !important;
+    @extend .fa-chevron-left;
+    &:before {
+      font-family: 'FontAwesome';
+      content: "\f053";
+    }
+    &:hover {
+      margin-right: -15px;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    border-radius: 6px 0 0 6px;
+    background: rgba(0,0,0,.3) !important;
+    @extend .fa-chevron-right;
+    &:before {
+      content: "\f054";
+      font-family: 'FontAwesome';
+    }
+    &:hover {margin-left: -15px;}
+  }
+
+  .slick-prev, .slick-next {
+    height: 100px;
+    width: 40px;
+    &:hover {
+      background: rgba(0,0,0,.1) !important;
+    }
+  }
+
+  .slick-dots { margin-left: 0;
+    bottom:0;
+    li {
+      button {
+        &:before {font-size: 15px; color:white; }
+      }
+    }
+  }
+}
+
