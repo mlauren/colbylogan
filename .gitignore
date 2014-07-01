@@ -1,0 +1,13 @@
+# root
+vendor/
+composer.lock
+composer.phar
+index.php
+wp-config.php
+wp/
+.idea/
+app/themes/*
+!app/themes/reverie
+app/mu-plugins/*
+!app/mu-plugins/custom-content.php
+app/plugins/*

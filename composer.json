@@ -1,0 +1,57 @@
+{
+  "repositories": [
+    {
+      "type":"composer",
+      "url":"http://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress",
+        "type": "webroot",
+        "version": "3.7.1",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/WordPress/WordPress/archive/3.7.1.zip"
+        },
+        "require" : {
+          "fancyguy/webroot-installer": "1.*"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "roots",
+        "type": "wordpress-theme",
+        "version": "6.5.0",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/roots/roots/archive/6.5.0.zip"
+        },
+        "require" : {
+          "fancyguy/webroot-installer": "1.*"
+        }
+      }
+    }
+  ],
+  "require": {
+    "wordpress": "3.7.1",
+    "fancyguy/webroot-installer": "1.0.0",
+    "roots":"6.5.0",
+    "wpackagist-plugin/akismet":"dev-trunk",
+    "wpackagist-plugin/captcha":">=3.9",
+    "wpackagist-theme/twentythirteen":"1.2",
+    "wpackagist-plugin/advanced-custom-fields":"*"
+  },
+  "extra": {
+    "webroot-dir": "wp",
+    "webroot-package": "wordpress",
+    "installer-paths": {
+        "app/plugins/{$name}/": ["type:wordpress-plugin"],
+        "app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+        "app/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  }
+
+}
