@@ -1,0 +1,79 @@
+#slide-videos-container {
+  h3 {text-align: center; text-transform: uppercase;}
+
+  .single-item-videos{
+    .slick-slide {
+
+        div.video-overlay-wrapper {
+          position: relative;
+          .bits-wrapper {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            a i {
+              color: white;
+              vertical-align: middle;
+              margin: 15% 0 0 33%;
+              padding: 5px 19px;
+              background: rgba(0,0,0,.6) !important;
+              border-radius: 10px;
+              &:before {font-size: 2em; color: white;}
+            }
+            a:hover, a:focus {
+              i {
+                background: rgba(0,0,0,.8) !important;
+              }
+            }
+            h5 {
+              bottom: 0;
+              margin: 0;
+              width: 100%;
+              position: absolute;
+              text-align: center;
+              background: rgba(0,0,0,.6) !important;
+            }
+          }
+          img {
+           z-index: 0;
+          }
+        }
+
+
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+    border-radius: 0 8px 8px;
+    @extend .fa-chevron-left;
+    &:before {
+      font-family: 'FontAwesome';
+      content: "\f053";
+    }
+    &:hover {
+      margin-right: -15px;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+    @extend .fa-chevron-right;
+    &:before {
+      content: "\f054";
+      font-family: 'FontAwesome';
+    }
+    &:hover {margin-left: -15px;}
+  }
+
+  .slick-prev, .slick-next {
+    height: 35px;
+    width: 35px;
+    background: rgba(0,0,0,.8) !important;
+    &:hover {
+      background: rgba(0,0,0,.9) !important;
+    }
+  }
+
+}

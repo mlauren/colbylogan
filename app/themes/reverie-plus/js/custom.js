@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
   var InputSize = function() {
     var contw = $inp('.single-item').find('.slick-slide:not(.slick-cloned)').first().width();
     var desHeight = contw / 4 * 2;
-    $inp('.slick-slide').css('height', desHeight);
+    $inp('.single-item').find('.slick-slide').css('height', desHeight);
   }
   $inp(document).ready(function() {
     InputSize();
@@ -19,6 +19,8 @@ jQuery(document).ready(function() {
   $inp(window).resize(function(){
     InputSize();
   });
+
+
 
   jQuery('body').flowtype();
 
@@ -28,9 +30,37 @@ jQuery(document).ready(function() {
     speed: 700,
     autoplay: true
   });
+
+  jQuery('.single-item-videos').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 2,
+
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
 });
 
-var FixedHeader = {};
+var FixedHeader = {}, InitializeLightbox = {};
 
 (function($){
 
@@ -63,8 +93,17 @@ var FixedHeader = {};
     }
   };
 
-  FixedHeader.init();
+  InitializeLightbox = {
+    init: function() {
+      $('.youtube-open-video').magnificPopup({
+          type: 'iframe'
+        });
+    }
+  }
 
+
+  FixedHeader.init();
+  InitializeLightbox.init();
 
 })(jQuery);
 

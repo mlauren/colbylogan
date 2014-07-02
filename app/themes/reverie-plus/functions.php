@@ -1,7 +1,6 @@
 <?php
 /*
-Author: Zhen Huang
-URL: http://themefortress.com/
+Author: Lauren Maxwell
 
 This place is much cleaner. Put your theme specific codes here,
 anything else you may want to use plugins to keep things tidy.
@@ -123,8 +122,10 @@ function load_custom_scripts() {
   wp_register_script('em_to_px_js', BOWER_DIRECTORY .'/getEmPixels/getEmPixels.js', array('jquery'), '1.0', true );
     wp_enqueue_script('em_to_px_js');
 
-  wp_register_script('slick_slideshow', BOWER_DIRECTORY . '/slick/slick/slick.js', array('jquery'), '1.0', true );
+  if (is_front_page()) {
+    wp_register_script('slick_slideshow', BOWER_DIRECTORY . '/slick/slick/slick.js', array('jquery'), '1.0', true );
     wp_enqueue_script('slick_slideshow');
+  }
 
   wp_register_script('custom_js', get_bloginfo('template_url').'/js/custom.js', array('jquery'), '1.0', true );
     wp_enqueue_script('custom_js');
@@ -134,5 +135,7 @@ function load_custom_scripts() {
 
 }
 add_action('wp_enqueue_scripts', 'load_custom_scripts');
+
+add_filter('show_admin_bar', '__return_false');
 
 ?>

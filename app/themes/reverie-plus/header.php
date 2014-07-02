@@ -54,7 +54,7 @@
           <ul class="title-area">
             <li class="toggle-navigation menu-icon"><a id="existing-content-menu" href="#custom-side-menu"><span class="fa fa-bars"></span></a></li>
             <li class="name">
-                <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/colbylogan_branding.png" /></a></h1>
               </li>
           </ul>
           <section id="custom-side-menu" class="navigation-bar-section right">
@@ -122,6 +122,8 @@
         ?>
       </div>
     </div>
+
+      <?php include_once('slideshow-video-media.php'); ?>
     <?php endif; ?>
 
     <!-- Start the main container -->

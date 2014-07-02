@@ -13,9 +13,14 @@ h4 { font-size: .85em; }
 h5 { font-size: .6em; }
 h6 { font-size: .4em; }
 
+.white {color: white;}
 /* Foundation overrides */
 body > header.contain-to-grid.sticky {
   margin-bottom: 0;
+}
+
+button.mfp-close:hover, button.mfp-close:focus, .button.mfp-close:hover, .button.mfp-close:focus {
+  background-color: transparent;
 }
 
 /* Custom Slick Slide Styles */
@@ -46,7 +51,7 @@ body > header.contain-to-grid.sticky {
       .slideshow-text-header, .slideshow-text-credit {
         color: white;
         width: 100%;
-        text-shadow: 1px -1px 2px rgba(43,43,43,1);
+        text-shadow: 0 1px 0 #000000;
       }
       .slideshow-text-header {
         font-weight: 700;
@@ -63,7 +68,6 @@ body > header.contain-to-grid.sticky {
   .slick-prev {
     left: 0;
     border-radius: 0 6px 6px;
-    background: rgba(0,0,0,.3) !important;
     @extend .fa-chevron-left;
     &:before {
       font-family: 'FontAwesome';
@@ -77,7 +81,6 @@ body > header.contain-to-grid.sticky {
   .slick-next {
     right: 0;
     border-radius: 6px 0 0 6px;
-    background: rgba(0,0,0,.3) !important;
     @extend .fa-chevron-right;
     &:before {
       content: "\f054";
@@ -87,8 +90,9 @@ body > header.contain-to-grid.sticky {
   }
 
   .slick-prev, .slick-next {
-    height: 100px;
+    height: 60px;
     width: 40px;
+    background: rgba(0,0,0,.6) !important;
     &:hover {
       background: rgba(0,0,0,.1) !important;
     }

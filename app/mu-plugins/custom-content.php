@@ -32,4 +32,21 @@ function create_post_type() {
     )
   );
 
+  register_post_type( 'video_media',
+    array(
+      'labels' => array(
+        'name' => __( 'Video' ),
+        'singular_name' => __( 'Video' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+      'show_in_nav_menus' => false,
+      'menu_position' => 1,
+      'supports' => array('title'),
+      'rewrite' => array( 'slug' => 'videos' ),
+      'taxonomies' => array('category'),
+      'hierarchical' => true
+    )
+  );
+
 }
