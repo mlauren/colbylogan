@@ -116,14 +116,11 @@ if ( ! function_exists( 'reverie_entry_meta' ) ) {
 
 function load_custom_scripts() {
 
-  wp_register_script('flowtype_js', BOWER_DIRECTORY . '/FlowType.JS/flowtype.js', array('jquery'), '1.0', true );
+  wp_register_script('flowtype_js', BOWER_DIRECTORY . '/flowtype/flowtype.js', array('jquery'), '1.0', true );
     wp_enqueue_script('flowtype_js');
 
-  wp_register_script('em_to_px_js', BOWER_DIRECTORY .'/getEmPixels/getEmPixels.js', array('jquery'), '1.0', true );
-    wp_enqueue_script('em_to_px_js');
-
   if (is_front_page()) {
-    wp_register_script('slick_slideshow', BOWER_DIRECTORY . '/slick/slick/slick.js', array('jquery'), '1.0', true );
+    wp_register_script('slick_slideshow', BOWER_DIRECTORY . '/slick.js/slick/slick.js', array('jquery'), '1.0', true );
     wp_enqueue_script('slick_slideshow');
   }
 

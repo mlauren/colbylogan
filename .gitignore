@@ -9,6 +9,7 @@ wp/
 app/themes/*
 !app/themes/reverie-plus
 app/themes/reverie-plus/.sass-cache/
+app/themes/reverie-plus/bower_components/
 app/mu-plugins
 !app/mu-plugins/custom-content.php
 app/plugins

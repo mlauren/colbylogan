@@ -38,7 +38,6 @@
   "require": {
     "wordpress": "3.7.1",
     "fancyguy/webroot-installer": "1.0.0",
-    "roots":"6.5.0",
     "wpackagist-plugin/akismet":"dev-trunk",
     "wpackagist-plugin/captcha":">=3.9",
     "wpackagist-theme/twentythirteen":"1.2",

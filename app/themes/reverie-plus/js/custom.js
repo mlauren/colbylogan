@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
   var $inp = jQuery.noConflict();
   var InputSize = function() {
     var contw = $inp('.single-item').find('.slick-slide:not(.slick-cloned)').first().width();
-    var desHeight = contw / 4 * 2;
+    var desHeight = contw / 4 * 1.75;
     $inp('.single-item').find('.slick-slide').css('height', desHeight);
   }
   $inp(document).ready(function() {
@@ -28,7 +28,8 @@ jQuery(document).ready(function() {
     dots: true,
     infinite: true,
     speed: 700,
-    autoplay: true
+    autoplay: true,
+    pauseOnHover: false
   });
 
   jQuery('.single-item-videos').slick({

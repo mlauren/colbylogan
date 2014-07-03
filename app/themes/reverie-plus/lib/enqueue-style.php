@@ -20,7 +20,7 @@ if( ! function_exists( 'reverie_enqueue_style' ) ) {
 add_action( 'wp_enqueue_scripts', 'reverie_enqueue_style' );
 
 function load_custom_styles() {
-  wp_register_style( 'slick_styles', BOWER_DIRECTORY . '/slick/slick/slick.css', __FILE__ );
+  wp_register_style( 'slick_styles', BOWER_DIRECTORY . '/slick.js/slick/slick.css', __FILE__ );
   wp_enqueue_style( 'slick_styles' );
 
   wp_register_style( 'sidr_styles', BOWER_DIRECTORY . '/sidr/stylesheets/jquery.sidr.light.css', __FILE__ );
