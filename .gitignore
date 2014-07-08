@@ -1,6 +1,8 @@
 # root
 vendor/
+.htaccess
 composer.lock
+error_log
 composer.phar
 index.php
 wp-config.php
