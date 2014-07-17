@@ -15,4 +15,6 @@ app/themes/reverie-plus/.sass-cache/
 app/themes/reverie-plus/bower_components/
 app/mu-plugins
 !app/mu-plugins/custom-content.php
-app/plugins
+app/plugins/*
+!app/plugins/simple-contact-form.js
+!app/plugins/contact-form.php
