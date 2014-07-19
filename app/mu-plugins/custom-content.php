@@ -18,15 +18,16 @@ function create_post_type() {
   register_post_type( 'slideshow_content',
     array(
       'labels' => array(
-        'name' => __( 'Slideshow' ),
-        'singular_name' => __( 'Slideshow' )
+        'name' => __( 'Slideshow Testimonial' ),
+        'singular_name' => __( 'Slideshow Testimonial' ),
+        'new_item' => __('Add New Item')
       ),
       'public' => true,
       'has_archive' => true,
       'show_in_nav_menus' => false,
       'menu_position' => 0,
-      'supports' => array('title'),
-      'rewrite' => array( 'slug' => 'slides' ),
+      'supports' => array('title', 'editor', 'excerpt'),
+      'rewrite' => array( 'slug' => 'testimonials' ),
       'taxonomies' => array('category'),
       'hierarchical' => true
     )
@@ -36,17 +37,38 @@ function create_post_type() {
     array(
       'labels' => array(
         'name' => __( 'Video' ),
-        'singular_name' => __( 'Video' )
+        'singular_name' => __( 'Video' ),
+        'new_item' => __('Add New Item')
       ),
       'public' => true,
       'has_archive' => true,
       'show_in_nav_menus' => false,
       'menu_position' => 1,
-      'supports' => array('title'),
+      'supports' => array('title', 'editor', 'excerpt'),
       'rewrite' => array( 'slug' => 'videos' ),
       'taxonomies' => array('category'),
       'hierarchical' => true
     )
   );
 
+}
+
+// Customize default post type.
+add_action( 'init', 'post_the_default_post_type');
+function post_the_default_post_type() {
+
+    register_post_type( 'post', array(
+        'labels' => array(
+            'name_admin_bar' => _x( 'Post', 'add new on admin bar' ),
+        ),
+        'public'  => true,
+        '_builtin' => false,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'map_meta_cap' => true,
+        'hierarchical' => false,
+        'rewrite' => array( 'slug' => 'blogposts' ),
+        'query_var' => false,
+        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+    ) );
 }

@@ -8,11 +8,6 @@ anything else you may want to use plugins to keep things tidy.
 */
 
 /*
-Define Bower components directory
-*/
-define("BOWER_DIRECTORY", get_bloginfo('template_url') . '/bower_components');
-
-/*
 1. lib/clean.php
   - head cleanup
 	- post and images related cleaning
@@ -114,23 +109,7 @@ if ( ! function_exists( 'reverie_entry_meta' ) ) {
     }
 };
 
-function load_custom_scripts() {
-
-  wp_register_script('flowtype_js', BOWER_DIRECTORY . '/flowtype/flowtype.js', array('jquery'), '1.0', true );
-    wp_enqueue_script('flowtype_js');
-
-  wp_register_script('slick_slideshow', BOWER_DIRECTORY . '/slick.js/slick/slick.js', array('jquery'), '1.0', true );
-    wp_enqueue_script('slick_slideshow');
-
-  wp_register_script('custom_js', get_bloginfo('template_url').'/js/custom.js', array('jquery'), '1.0', true );
-    wp_enqueue_script('custom_js');
-
-  wp_register_script('sidr_js', BOWER_DIRECTORY .'/sidr/jquery.sidr.min.js', array('jquery'), '1.0', true );
-    wp_enqueue_script('sidr_js');
-
-}
-add_action('wp_enqueue_scripts', 'load_custom_scripts');
-
+// Remove admin bar from front end part of site.
 add_filter('show_admin_bar', '__return_false');
 
 ?>

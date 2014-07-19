@@ -2,9 +2,7 @@ var CustomValidation = {};
 
 (function($){
 
-
   CustomValidation = {
-
 
     init: function(form_submit, name, email, message, headerAppend) {
       CustomValidation.form_submit = form_submit;
@@ -22,7 +20,8 @@ var CustomValidation = {};
       CustomValidation.fieldsVal = {};
 
       // Click Handler that runs the function
-      CustomValidation.form_submit.click(function () {
+      CustomValidation.form_submit.click(function (event) {
+        event.preventDefault();
         // Validate all the fields and add to CustomValidation.fieldsVal object
         CustomValidation.validate_fields();
 
@@ -112,7 +111,7 @@ var CustomValidation = {};
           $('.alert').hide();
           successText = "Thanks for contacting us. We will contact you shortly.";
 
-          CustomValidation.form_submit.parents('form').hide();
+          CustomValidation.form_submit.parents('form, .panel').hide();
           CustomValidation.headerAppend.append('<div data-alert class="alert-box info"> ' + successText + ' <a href="#" class="close">&times;</a> </div>');
 
         }

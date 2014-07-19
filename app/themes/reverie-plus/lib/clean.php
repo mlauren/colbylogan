@@ -4,6 +4,11 @@ Start all the functions
 at once for Reverie.
 *********************/
 
+/*
+Define Bower components directory
+*/
+define("BOWER_DIRECTORY", get_bloginfo('template_url') . '/bower_components');
+
 // start all the functions
 add_action('after_setup_theme','reverie_startup');
 
@@ -35,6 +40,23 @@ if( ! function_exists( 'reverie_startup ' ) ) {
 	} /* end reverie_startup */
 }
 
+/* Load all my custom scripts */
+function load_custom_scripts() {
+
+  wp_register_script('flowtype_js', BOWER_DIRECTORY . '/flowtype/flowtype.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('flowtype_js');
+
+  wp_register_script('slick_slideshow', BOWER_DIRECTORY . '/slick.js/slick/slick.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('slick_slideshow');
+
+  wp_register_script('custom_js', get_bloginfo('template_url').'/js/custom.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('custom_js');
+
+  wp_register_script('sidr_js', BOWER_DIRECTORY .'/sidr/jquery.sidr.min.js', array('jquery'), '1.0', true );
+    wp_enqueue_script('sidr_js');
+
+}
+add_action('wp_enqueue_scripts', 'load_custom_scripts');
 
 /**********************
 WP_HEAD GOODNESS

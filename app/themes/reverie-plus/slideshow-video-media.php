@@ -1,6 +1,6 @@
 <div class="row">
   <div id="slide-videos-container" class="small-12 small-centered large-12 large-centered columns">
-    <h3><?php _e('Latest Videos'); ?></h3>
+    <h3 class="subheader"><?php _e('Latest Videos'); ?></h3>
     <div class="single-item-videos">
       <?php
 

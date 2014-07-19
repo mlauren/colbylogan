@@ -6,12 +6,6 @@ body {
 h1,h2,h3,h4,h5,h6,p {
   line-height: 1.45;
 }
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1em; }
-h4 { font-size: .85em; }
-h5 { font-size: .6em; }
-h6 { font-size: .4em; }
 
 .white {color: white;}
 /* Foundation overrides */
@@ -21,6 +15,19 @@ body > header.contain-to-grid.sticky {
 
 button.mfp-close:hover, button.mfp-close:focus, .button.mfp-close:hover, .button.mfp-close:focus {
   background-color: transparent;
+}
+
+footer ul.inline-list i:before {
+  font-size: 34px;
+}
+
+body:not(.home) .container {
+  padding-top: .5em;
+}
+
+h3.page-header-text {
+  border-bottom: 1px solid #E9E9E9;
+  padding-bottom: 0.25em;
 }
 
 /* Custom Slick Slide Styles */
@@ -107,4 +114,25 @@ button.mfp-close:hover, button.mfp-close:focus, .button.mfp-close:hover, .button
     }
   }
 }
+
+.testamonial-panel {
+  &:first-of-type {margin-top: 20px;}
+  margin: 0;
+  padding-left: 0;
+  box-shadow: 0 1px 1px #888888;
+  border: 1px solid #d8d8d8;
+  margin-bottom: 1.25rem;
+  background: white;
+  border-radius:5px;
+  overflow: hidden;
+
+  .content-text-inner {
+    margin-top: 15px;
+  }
+
+  img {
+    border-right: 1px solid #d8d8d8;
+  }
+}
+
 

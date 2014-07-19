@@ -1,14 +1,20 @@
 <?php get_header(); ?>
 
   <!-- Row for main content area -->
-  <div class="small-12 large-8 columns" id="content" role="main">
+  <div class="small-12 large-12 columns" id="content" role="main">
 
     <?php if ( have_posts() ) : ?>
 
       <?php /* Start the Loop */ ?>
+      <?php
+        query_posts( array ( 'category_name' => 'featured_front', 'posts_per_page' => 15 ) );
+      ?>
+
       <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'content', get_post_format() ); ?>
+        <?php get_template_part( 'content' ); ?>
       <?php endwhile; ?>
+
+      <?php wp_reset_query(); ?>
 
     <?php else : ?>
       <?php get_template_part( 'content', 'none' ); ?>
@@ -24,6 +30,5 @@
     <?php } ?>
 
   </div>
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
